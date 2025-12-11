@@ -1,53 +1,39 @@
-🎓 Sistem Pendataan Mahasiswa
-Sistem CRUD (Create, Read, Update, Delete) data Mahasiswa berbasis Laravel dan Filament.
+🚀 Instalasi & Setup Wajib
+Ikuti urutan langkah ini setelah mengkloning repositori:
 
-🚀 Setup Cepat (Quick Start)
-Ikuti langkah-langkah ini untuk menjalankan proyek setelah mengkloning dari GitHub.
-
-1. Persiapan Dependencies
-Instal paket PHP dan siapkan file konfigurasi lingkungan:
-
+1. Preparasi Proyek & Database
 Bash
 
+# 1. Instal dependencies PHP
 composer install
+
+# 2. Siapkan file environment (.env)
 cp .env.example .env
 php artisan key:generate
-💡 Wajib: Edit file .env untuk mengatur koneksi database Anda (DB_DATABASE, DB_USERNAME, dll.).
 
-2. Database dan Seeder
-Buat semua tabel (users, program_studis, mahasiswas) dan isi data awal (dummy) secara bersamaan:
+# 3. PASTIKAN EDIT .env (DB_DATABASE, DB_USERNAME, dll)
 
-Bash
-
+# 4. Migrasi & Isi data awal (Wajib dijalankan!)
 php artisan migrate:fresh --seed
-3. Setup Administrator
-Buat akun admin untuk bisa login ke Admin Panel Filament:
-
+2. Akun & Frontend
 Bash
 
+# 5. Buat Akun Admin (Wajib untuk login)
 php artisan filament:user
-4. Kompilasi Asset Frontend
-Instal Node Dependencies dan kompilasi asset Filament:
 
-Bash
-
+# 6. Instal dependencies frontend
 npm install
 npm run dev
-🌐 Akses Aplikasi
-Jalankan Server:
-
+🌐 Jalankan
 Bash
 
 php artisan serve
-Akses Admin Panel: Buka browser dan navigasi ke http://127.0.0.1:8000/admin.
+Akses Admin Panel di http://127.0.0.1:8000/admin
 
-🛠️ Catatan Penting
-Jika Anda menemukan error terkait kolom database ("Unknown column..." atau "Failed to open referenced table..."), jalankan perintah di bawah untuk memastikan database Anda sinkron dengan kode:
 
-Bash
 
-php artisan cache:clear
-php artisan migrate:fresh --seed
+
+
 
 
 
